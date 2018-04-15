@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="my-cordova-plugin"
+    version="1.0.0">
+    <name>Cordova Plugin Template</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
+    <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue>
+
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+
+        <!-- This is the window variable name you want, like window.CordovaPluginScancode -->
+        <clobbers target="CordovaPluginScancode" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="CordovaPluginScancode">
+          <param name="android-package" value="com.example.MyCordovaPlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+      <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <activity  android:name="com.example.FullScreenActivity"
+                   android:label=""
+                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+                 
+      </config-file>
+      <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.CAMERA"/>
+      <uses-permission android:name="android.permission.FLASHLIGHT"/>
+      <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    </config-file>
+
+      <source-file src="src/android/com/example/MyCordovaPlugin.java" target-dir="src/com/example/" />
+      <source-file src="src/android/com/example/FullScreenActivity.java" target-dir="src/com/example/" />
+      <framework src="src/android/com/example/custom.gradle" custom="true" type="gradleReference" />
+    </platform>
+</plugin>

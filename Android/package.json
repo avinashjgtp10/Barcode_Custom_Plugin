@@ -1,0 +1,12 @@
+{
+  "name": "cordova-plugin-scancode",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-scancode",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "QR code scanner"
+}
